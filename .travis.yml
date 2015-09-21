@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+  - 2.2.3
+# Added the following line because it
+# was in the .travis.yml file for the
+# airport_challenge
+script: bundle exec rspec spec

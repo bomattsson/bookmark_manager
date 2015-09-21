@@ -105,6 +105,7 @@ DEPENDENCIES
   capybara
   coveralls
   launchy
+  rack-test
   rake
   rspec
   rspec-sinatra

@@ -8,6 +8,7 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'launchy'
   gem 'rake'
+  gem 'rack-test'
   gem 'rspec'
   gem 'rspec-sinatra'
   gem 'rubocop'

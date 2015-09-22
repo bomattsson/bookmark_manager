@@ -2,7 +2,7 @@
 
 ENV['RACK_ENV'] = 'test'
 
-require File.join(File.dirname(__FILE__), '..', 'lib/my_app.rb')
+require File.join(File.dirname(__FILE__), '..', 'lib/app.rb')
 
 require 'capybara'
 require 'capybara/rspec'
@@ -13,7 +13,7 @@ require 'database_cleaner'
 
 
 def app
-  MyApp
+  App
 end
 
 def populate_links
@@ -25,7 +25,7 @@ def populate_links
   end
 end
 
-Capybara.app = MyApp
+Capybara.app = App
 
 RSpec.configure do |config|
   config.include Capybara::DSL
@@ -37,12 +37,12 @@ RSpec.configure do |config|
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
   end
-  
+
   config.before(:suite) do
       DatabaseCleaner.strategy = :transaction
       DatabaseCleaner.clean_with(:truncation)
   end
-  
+
   config.before(:each) do
     DatabaseCleaner.start
   end

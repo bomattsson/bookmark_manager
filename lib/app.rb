@@ -18,7 +18,7 @@ class App < Sinatra::Base
   DataMapper.auto_upgrade!
 
   get '/' do
-    @links = Link.all
+    @links = Link.all(order: [ :created_at.desc ])
     erb :index
   end
 

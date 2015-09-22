@@ -1,0 +1,15 @@
+<h1> Links </h1>
+
+<ul id="links">
+<% @links.each do |link| %>
+  <a href="<%= link[:url] %>"><%= link[:title] %></a><br />
+  <p><%= link[:description] %> </p>
+
+<!-- Code for tags goes here (get from README.md) -->
+
+  <p>
+    <small>
+      Created: <%= link[:created_at] %> by: <%= link[:created_by] %>
+    </small>
+  </p>
+<% end %>

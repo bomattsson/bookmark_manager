@@ -1,23 +1,13 @@
 <% @links.each do |link| %>
 	<a href="<%= link[:url] %>"><%= link[:title] %></a><br />
 	<p><%= link[:description] %> </p>
-	
 
-	<% if link.tags.any? %>
-	<p>
-		<small> 
-			Tags:
-		<% link.tags.each do |tag| %>
-			<%= tag[:title]%>
-		<% end %>
-		</small>
-	</p>
-	<% end %>
+<!-- Code for tags goes here (get from README.md) -->
 
 	<p>
-		<small> 
+		<small>
 			Created: <%= link[:created_at] %> by: <%= link[:created_by] %>
 		</small>
 	</p>
 
-<% end %> 
+<% end %>

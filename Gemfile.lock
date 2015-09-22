@@ -31,8 +31,11 @@ GEM
       dm-transactions (~> 1.2.0)
       dm-types (~> 1.2.0)
       dm-validations (~> 1.2.0)
+<<<<<<< HEAD
     data_objects (0.10.16)
       addressable (~> 2.1)
+=======
+>>>>>>> ee09258a3d89b70b1ae8f2498e1c9c3e25983324
     diff-lcs (1.2.5)
     dm-aggregates (1.2.0)
       dm-core (~> 1.2.0)
@@ -40,6 +43,7 @@ GEM
       dm-core (~> 1.2.0)
     dm-core (1.2.1)
       addressable (~> 2.3)
+<<<<<<< HEAD
     dm-do-adapter (1.2.0)
       data_objects (~> 0.10.6)
       dm-core (~> 1.2.0)
@@ -51,6 +55,10 @@ GEM
     dm-rspec (0.3.0)
       dm-core
       dm-validations
+=======
+    dm-migrations (1.2.0)
+      dm-core (~> 1.2.0)
+>>>>>>> ee09258a3d89b70b1ae8f2498e1c9c3e25983324
     dm-serializer (1.2.2)
       dm-core (~> 1.2.0)
       fastercsv (~> 1.5)
@@ -71,8 +79,11 @@ GEM
       uuidtools (~> 2.1)
     dm-validations (1.2.0)
       dm-core (~> 1.2.0)
+<<<<<<< HEAD
     do_postgres (0.10.16)
       data_objects (= 0.10.16)
+=======
+>>>>>>> ee09258a3d89b70b1ae8f2498e1c9c3e25983324
     docile (1.1.5)
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
@@ -164,8 +175,11 @@ DEPENDENCIES
   capybara
   coveralls
   data_mapper
+<<<<<<< HEAD
   dm-postgres-adapter
   dm-rspec
+=======
+>>>>>>> ee09258a3d89b70b1ae8f2498e1c9c3e25983324
   launchy
   rack-test
   rake

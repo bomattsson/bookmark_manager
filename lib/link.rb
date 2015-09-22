@@ -1,4 +1,5 @@
 class Link
+
   include DataMapper::Resource
 
   property :id,         Serial
@@ -7,3 +8,4 @@ class Link
   property :desc,       String
   property :created_at, DateTime
 end
+

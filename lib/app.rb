@@ -23,8 +23,26 @@ class App < Sinatra::Base
   end
 
   get '/links' do
-    @links = Link.all
+    @links = Link.all(order: [ :created_at.desc ])
     erb :'links/index'
+  end
+
+  post '/link' do
+    if((params[:title] == '') || (params[:url] == ''))
+      redirect '/links/new'
+    else
+      new_link = Link.new
+      new_link.title = params[:title]
+      new_link.url = params[:url]
+      new_link.description = params[:description]
+      new_link.created_at = Time.now
+      new_link.save
+      redirect '/links'
+    end
+  end
+
+  get '/links/new' do
+    erb :'links/new'
   end
 
   # start the server if ruby file executed directly

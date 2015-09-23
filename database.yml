@@ -1,7 +1,8 @@
 # https://devcenter.heroku.com/articles/heroku-postgresql#connecting-in-ruby
+# Upon close reading of the above, I see that this file is for Rails apps (and this is not a Rails app).  It does say to require the pg gem in the Gemfile for Ruby apps, so I guess we can try that if/when we want.  I've had enough for tonight, though, so will just comment out the rest of this file.
 
-development:
-  adapter: postgresql
-  host: ec2-54-83-10-210.compute-1.amazonaws.com
-  username: cfkhcxildfxsaz
-  database: app-dev
+# development:
+#   adapter: postgresql
+#   host: ec2-54-83-10-210.compute-1.amazonaws.com
+#   username: cfkhcxildfxsaz
+#   database: app-dev

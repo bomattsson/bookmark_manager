@@ -17,6 +17,7 @@ class App < Sinatra::Base
   DataMapper.finalize
   DataMapper.auto_upgrade!
 
+
   get '/' do
     @links = Link.all(order: [ :created_at.desc ])
     erb :index
@@ -43,6 +44,10 @@ class App < Sinatra::Base
 
   get '/links/new' do
     erb :'links/new'
+  end
+
+   get '/users/new' do
+    erb :'users/new'
   end
 
   # start the server if ruby file executed directly

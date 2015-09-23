@@ -1,0 +1,7 @@
+# https://devcenter.heroku.com/articles/heroku-postgresql#connecting-in-ruby
+
+development:
+  adapter: postgresql
+  host: ec2-54-83-10-210.compute-1.amazonaws.com
+  username: cfkhcxildfxsaz
+  database: app-dev

@@ -3,6 +3,7 @@ require 'byebug'
 require 'data_mapper'
 require 'dm-migrations'
 require './lib/link.rb'
+require './lib/user.rb'
 
 class App < Sinatra::Base
   # helpers Sinatra::FormHelpers
@@ -14,8 +15,9 @@ class App < Sinatra::Base
   DataMapper.setup(:default, "postgres://localhost/bookmark_web_#{env}")
   # DataMapper::Logger.new($stdout, :debug)
   DataMapper::Model.raise_on_save_failure = true
-  DataMapper.finalize
   DataMapper.auto_upgrade!
+  DataMapper.finalize
+
 
 
   get '/' do

@@ -3,6 +3,7 @@ ruby '2.2.3'
 gem 'sinatra'
 gem 'dm-postgres-adapter'
 gem 'data_mapper'
+gem 'bcrypt'
 
 group :development, :test do
   gem 'byebug'

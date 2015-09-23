@@ -8,12 +8,11 @@ class User
   include BCrypt 
   
   property :id,                  Serial
-  property :name,                String
-  property :email,               String
-  property :password_digest,     String
+  property :name,                String, length: 255
+  property :email,               String, length: 255
+  property :password_digest,     Text, length: 255
   property :created_at,          DateTime
 
-  #belongs_to :user
   # has n, :tags, through: Resource
 
   # validates_presence_of :title

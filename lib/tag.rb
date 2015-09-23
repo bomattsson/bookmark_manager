@@ -1,12 +1,12 @@
-# class Tag
-#   include DataMapper::Resource
+class Tag
+  include DataMapper::Resource
 
-#   property :id,           Serial
-#   property :title,        String
+  property :id,           Serial
+  property :title,        String
 
-#   #has n, :taggings
-#   has n, :links, through: Resource
+  #has n, :taggings
+  has n, :links, through: Resource
 
-#   validates_presence_of :title
+  validates_presence_of :title
 
-# end
+end

@@ -13,4 +13,14 @@ feature 'register a new user' do
      	click_button 'Register'
 	end
 
+	scenario 'new user not created with vaild input ' do
+      expect(User.count).to eq 0
+      visit '/users/new'
+      fill_in 'name', with: ''
+      fill_in 'email', with: 'chris@cint.com'
+      fill_in 'password', with: 'anything'
+      fill_in 'password_confirm', with: 'anything'
+      click_button 'Register'
+      expect(User.count).to eq 0
+  end 
 end

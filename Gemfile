@@ -1,8 +1,8 @@
 ruby '2.2.3'
 
-gem 'sinatra'
-gem 'dm-postgres-adapter'
 gem 'pg'
+gem 'dm-postgres-adapter'
+gem 'sinatra'
 gem 'data_mapper'
 gem 'sinatra-formhelpers-ng'
 gem 'bcrypt'

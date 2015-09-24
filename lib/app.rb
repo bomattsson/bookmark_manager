@@ -1,5 +1,7 @@
 require 'sinatra/base'
-# require 'byebug' # When I deployed to Heroku for the first time and went to the page http://bmm1.herokuapp.com it showed an error message and said to check the logs ($ heroku logs), which I did.  Near the top of the logs I found this: "2015-09-23T19:38:11.409113+00:00 app[web.1]: /app/lib/app.rb:2:in `require': cannot load such file -- byebug (LoadError)"  So I'm testing commenting out this line.
+# require 'byebug'
+# require 'pry'
+require 'tilt/erb' # Need here?
 require 'data_mapper'
 require 'dm-migrations'
 require './lib/link.rb'
@@ -12,7 +14,9 @@ class App < Sinatra::Base
   set :session_secret, '123321123'
   use Rack::Session::Pool
   env = ENV['RACK_ENV'] || "development"
-  DataMapper.setup(:default, "postgres://localhost/bookmark_web_#{env}")
+  # DataMapper.setup(:default, "postgres://localhost/bookmark_web_#{env}")
+  DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/bookmark_web_#{env}")
+
   # DataMapper::Logger.new($stdout, :debug)
   DataMapper::Model.raise_on_save_failure = true
   DataMapper.auto_upgrade!

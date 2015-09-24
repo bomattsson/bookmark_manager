@@ -1,7 +1,7 @@
 require 'user'
 
 describe User do
-  it { is_expected.to have_property :id }
+  it { is_expected.to have_property :giid }
   it { is_expected.to have_property :name }
   it { is_expected.to have_property :email }
   it { is_expected.to have_property :password_digest }
@@ -16,9 +16,9 @@ describe User do
 
   describe 'password encryption' do
       it 'encrypts password' do
-      user = user.create(email: 'bo@cint.com', password: 'test', password_confirm: '')
-      expect(user.password_digest.class).to eq BCrypt::password
-      expect(user.password_digest.version).to eq "whatever"
+      user = User.create(name: 'Bo', email: 'bo@cint.com', password: 'test', password_confirm: 'test')
+      expect(user.password_digest.class).to eq BCrypt::Password
+      expect(user.password_digest.version).to eq "2a"
       end
   end
 

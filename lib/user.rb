@@ -19,7 +19,7 @@ class User
   # validates_confirmation_of :password, message: "Sorry, your passwords don't match"
 
   # has n, :tags, through: Resource
-  # has n, :links, through: Resource
+  # has n, :links #, through: Resource
 
   before :save do
     if self.password == self.password_confirm

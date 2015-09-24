@@ -14,10 +14,13 @@ describe User do
 
   #it { is_expected.to validate_presence_of :password }
 
-  #describe 'password encryption' do
-  #  it 'encrypts password' do
-  # end
-  #end
+  describe 'password encryption' do
+      it 'encrypts password' do
+      user = user.create(email: 'bo@cint.com', password: 'test', password_confirm: '')
+      expect(user.password_digest.class).to eq BCrypt::password
+      expect(user.password_digest.version).to eq "whatever"
+      end
+  end
 
   describe 'user authentication' do
 

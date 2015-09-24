@@ -2,7 +2,9 @@ ruby '2.2.3'
 
 gem 'sinatra'
 gem 'dm-postgres-adapter'
+gem 'pg'
 gem 'data_mapper'
+gem 'sinatra-formhelpers-ng'
 gem 'bcrypt'
 
 group :development, :test do

@@ -1,7 +1,7 @@
 require 'sinatra/base'
 # require 'byebug'
 # require 'pry'
-require 'tilt/erb' # Need here?
+require 'tilt/erb'
 require 'data_mapper'
 require 'dm-migrations'
 require './lib/link.rb'
@@ -14,7 +14,6 @@ class App < Sinatra::Base
   set :session_secret, '123321123'
   use Rack::Session::Pool
   env = ENV['RACK_ENV'] || "development"
-  # DataMapper.setup(:default, "postgres://localhost/bookmark_web_#{env}")
   DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/bookmark_web_#{env}")
 
   # DataMapper::Logger.new($stdout, :debug)

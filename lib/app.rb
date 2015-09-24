@@ -55,9 +55,19 @@ class App < Sinatra::Base
     erb :'users/new'
   end
 
-  post '/users/new' do
-    # Code to create and save user
-    redirect '/'
+  post '/users' do
+    if((params[:name] == '') || (params[:email] == ''))
+      redirect '/users/new'
+    else
+      new_user = User.new
+      new_user.name = params[:name]
+      new_user.email = params[:email]
+      new_user.password = params[:password]
+      new_user.password_confirm = params[:password_confirm]
+      new_user.created_at = Time.now
+      new_user.save
+      redirect '/'
+    end
   end
   # start the server if ruby file executed directly
   run! if app_file == $0

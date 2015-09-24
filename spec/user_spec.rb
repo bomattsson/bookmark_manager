@@ -35,6 +35,8 @@ describe User do
     xit 'with invalid credentials' do
       expect(User.authenticate('chris@cint.com', 'wrong-password')).to eq nil
     end
+
+
   end
 
 end

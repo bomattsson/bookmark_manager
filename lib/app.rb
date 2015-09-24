@@ -1,5 +1,5 @@
 require 'sinatra/base'
-# require 'byebug'
+ require 'byebug'
 # require 'pry'
 require 'tilt/erb'
 require 'data_mapper'
@@ -20,8 +20,9 @@ class App < Sinatra::Base
   # DataMapper::Logger.new($stdout, :debug)
   DataMapper::Model.raise_on_save_failure = true
   DataMapper.finalize
+  #DataMapper.auto_migrate!
   DataMapper.auto_upgrade!
-
+  #byebug
   get '/' do
     @links = Link.all(order: [ :created_at.desc ])
     erb :index
@@ -65,9 +66,15 @@ class App < Sinatra::Base
       new_user.password_confirm = params[:password_confirm]
       new_user.created_at = Time.now
       new_user.save
-      redirect '/'
+      redirect '/links'
     end
   end
+
+  get '/tags' do
+    #@tags = Tags.all(order: [ :created_at.desc ])
+    erb :'linksde/index'
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

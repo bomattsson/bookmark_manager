@@ -8,8 +8,8 @@ class Link
   property :description,       String
   property :created_at,        DateTime
 
-  # belongs_to :user
-  # has n, :tags, through: Resource
+  belongs_to :user
+  has n, :tags, through: Resource
 
   validates_presence_of :title
   validates_presence_of :url

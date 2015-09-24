@@ -32,7 +32,7 @@ describe User do
       expect(User.authenticate('chris@cint.com', 'password')).to eq @user
     end
 
-    xit 'with invalid credentials' do
+    it 'with invalid credentials' do
       expect(User.authenticate('chris@cint.com', 'wrong-password')).to eq nil
     end
   end

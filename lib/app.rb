@@ -6,6 +6,7 @@ require 'data_mapper'
 require 'dm-migrations'
 require './lib/link.rb'
 require './lib/user.rb'
+require './lib/tag.rb'
 
 class App < Sinatra::Base
   # helpers Sinatra::FormHelpers
@@ -18,10 +19,8 @@ class App < Sinatra::Base
 
   # DataMapper::Logger.new($stdout, :debug)
   DataMapper::Model.raise_on_save_failure = true
-  DataMapper.auto_upgrade!
   DataMapper.finalize
-
-
+  DataMapper.auto_upgrade!
 
   get '/' do
     @links = Link.all(order: [ :created_at.desc ])
